@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import banner from "../assets/images/hero-2.png";
+import banner from "../assets/images/Hero-Banner.webp";
 import frame from "../assets/images/1.png";
 import frame2 from "../assets/images/diamond.png";
 import { BsInstagram } from "react-icons/bs";
@@ -29,17 +29,17 @@ const Hero = () => {
     <>
       <div className="overflow-hidden">
         {/* Hero Section with Parallax & Animations */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative bg-black min-h-screen flex items-center justify-center overflow-hidden">
           {/* Animated Background */}
-          <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 z-1 ">
             <img 
               src={banner} 
               className="w-full h-full object-cover " 
               alt="cinema background"
               
             />
-           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
-             {/* <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-transparent animate-pulse"></div> */}
+           <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-black/50 to-black/80"></div>
+             <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-transparent animate-pulse"></div>
           </div>
 
           {/* Floating Elements */}
@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="grid grid-cols-3">
+          <div className="grid md:grid-cols-3 grid-cols-1">
           <div className="relative col-span-2 z-10 w-full px-6 md:px-12 lg:px-20 max-w-7xl mx-auto"
            data-aos="fade-right"
             data-aos-duration="1200">
@@ -67,7 +67,7 @@ const Hero = () => {
 
               {/* Main Title */}
               <h1 
-                className="text-4xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6"
+                className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
                 
               >
                 <span className="text-white block mb-2">The Legacy of bringing</span>
@@ -123,9 +123,9 @@ const Hero = () => {
               </div> */}
             </div>
           </div>
-          <div className="flex justify-center items-center">
+          {/* <div className="flex justify-center items-center">
             <img src={Diamond} alt="Diamond Babu" className="object-cover w-auto h-110" />
-          </div>
+          </div> */}
           </div>
 
           {/* Scroll Indicator */}
@@ -153,7 +153,7 @@ const Hero = () => {
                   data-aos-duration="1200"
                 >
                   {/* Decorative Frame */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-800 rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-800 rounded-3xl opacity-20 blur-3xl group-hover:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative">
                     <img
                       src={frame}
@@ -280,7 +280,7 @@ const Hero = () => {
                   data-aos-duration="1200"
                 >
                   {/* Decorative Glow */}
-                  <div className="absolute -inset-4 bg-gradient-to-l from-amber-600 to-amber-800 rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-l from-amber-600 to-amber-800 rounded-3xl opacity-20 blur-xl group-hover:opacity-50 transition-opacity duration-500"></div>
                   <div className="relative">
                     <img
                       src={frame2}
@@ -288,8 +288,8 @@ const Hero = () => {
                       alt="Diamond Babu"
                     />
                     {/* Decorative Corner */}
-                    <div className="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-amber-500 rounded-tr-3xl"></div>
-                    <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-amber-500 rounded-bl-3xl"></div>
+                    <div className="absolute top-0 right-0 w-24 h-32 border-t-4 border-r-4 border-amber-500 rounded-tr-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-32 border-b-4 border-l-4 border-amber-500 rounded-bl-3xl"></div>
                   </div>
                 </div>
               </div>
