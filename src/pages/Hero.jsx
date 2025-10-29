@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <>
       <div className="overflow-hidden">
-        {/* Hero Section with Parallax & Animations */}
+        {/* Hero Section with Animations */}
         <section className="relative bg-black min-h-screen flex items-center justify-center overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0 z-1 ">
