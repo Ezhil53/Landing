@@ -6,7 +6,9 @@ import frame from "../assets/images/1.png";
 import frame2 from "../assets/images/diamond.png";
 import { BsInstagram } from "react-icons/bs";
 import Diamond from '../assets/images/D01.png'
-import { FiArrowRight, FiAward, FiFilm, FiStar } from "react-icons/fi";
+import Header from '../components/Header'
+import News from '../components/News'
+import {  FiAward, FiStar } from "react-icons/fi";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -28,18 +30,22 @@ const Hero = () => {
   return (
     <>
       <div className="overflow-hidden">
+      
         {/* Hero Section with Animations */}
-        <section className="relative bg-black min-h-screen flex items-center justify-center overflow-hidden">
+         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute top-10 right-10 text-yellow-600 rounded-xl bg-white/20 backdrop-blur-2xl p-5 text-5xl font-bold">Filmnews 24</div>
           {/* Animated Background */}
-          <div className="absolute inset-0 z-1 ">
+          <div className="absolute inset-0 -z-10">
             <img 
               src={banner} 
-              className="w-full h-full object-cover " 
+              className="w-full h-full object-cover transition-transform duration-[8000ms]" 
               alt="cinema background"
-              
+              style={{
+                transform: `scale(1.1) translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
+              }}
             />
-           <div className="absolute inset-0 bg-gradient-to-l from-black/20 via-black/50 to-black/80"></div>
-             <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-transparent animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 to-transparent animate-pulse"></div>
           </div>
 
           {/* Floating Elements */}
@@ -50,26 +56,22 @@ const Hero = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="grid md:grid-cols-3 grid-cols-1">
-          <div className="relative col-span-2 z-10 w-full px-6 md:px-12 lg:px-20 max-w-7xl mx-auto"
-           data-aos="fade-right"
-            data-aos-duration="1200">
-            <div>
+          <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 max-w-7xl mx-auto flex items-center justify-start">
+            <div 
+              className="w-full md:w-auto"
+              data-aos="fade-right"
+              data-aos-duration="1200"
+            >
               {/* Tagline Badge */}
               <div 
                 className="inline-flex items-center gap-2 bg-amber-600/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-6 py-2 mb-6"
-                data-aos="fade-down"
-                data-aos-delay="200"
               >
                 <FiStar className="text-amber-400 animate-spin-slow" style={{ animationDuration: '8s' }} />
-                <span className="text-amber-400 font-semibold text-sm md:text-base">Where Cinema Legends Are Made</span>
+                <span className="text-amber-400 font-semibold text-sm">Where Cinema Legends Are Made</span>
               </div>
 
               {/* Main Title */}
-              <h1 
-                className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
-                
-              >
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-left">
                 <span className="text-white block mb-2">The Legacy of bringing</span>
                 <span className="text-white block">Cinematic visions to </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-600 to-amber-800 inline-block animate-gradient">
@@ -77,26 +79,14 @@ const Hero = () => {
                 </span>
               </h1>
 
-              {/* Subtitle */}
-              {/* <p 
-                className="text-gray-300 text-lg md:text-xl lg:text-2xl max-w-3xl mb-8 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                Your Cinema Experience Starts with Us – Connecting audiences with unforgettable moments through 35+ years of excellence in Tamil cinema
-              </p> */}
-
               {/* Stats Cards */}
-              <div 
-                className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mb-10"
-               
-              >
+              <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-2xl mb-10">
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-500/50">
                   <div className="text-2xl md:text-4xl font-bold text-amber-500 mb-1">600+</div>
                   <div className="text-xs md:text-sm text-gray-400">Films Promoted</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-500/50" style={{ transitionDelay: '100ms' }}>
-                  <div className="text-2xl md:text-4xl font-bold text-amber-500 mb-1">35+</div>
+                  <div className="text-2xl md:text-4xl font-bold text-amber-500 mb-1">40+</div>
                   <div className="text-xs md:text-sm text-gray-400">Years Legacy</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-amber-500/50" style={{ transitionDelay: '200ms' }}>
@@ -104,37 +94,12 @@ const Hero = () => {
                   <div className="text-xs md:text-sm text-gray-400">Dedication</div>
                 </div>
               </div>
-
-              {/* CTA Buttons */}
-              {/* <div 
-                className="flex flex-wrap gap-4"
-                data-aos="fade-up"
-                data-aos-delay="1000"
-              >
-                <button className="group bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/50">
-                  <FiFilm className="text-xl group-hover:rotate-12 transition-transform" />
-                  <span>Explore Our Legacy</span>
-                  <FiArrowRight className="text-xl group-hover:translate-x-2 transition-transform" />
-                </button>
-                <button className="group bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 transition-all duration-300 hover:scale-105">
-                  <BsInstagram className="text-xl group-hover:rotate-12 transition-transform" />
-                  <span>Connect With Us</span>
-                </button>
-              </div> */}
             </div>
           </div>
-          {/* <div className="flex justify-center items-center">
-            <img src={Diamond} alt="Diamond Babu" className="object-cover w-auto h-110" />
-          </div> */}
-          </div>
 
-          {/* Scroll Indicator */}
-          {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-              <div className="w-1.5 h-3 bg-amber-500 rounded-full animate-pulse"></div>
-            </div>
-          </div> */}
         </section>
+
+        <News/>
 
         {/* First Section - Film News Anandan with Enhanced Design */}
         <section className="py-16 md:py-28 font-[Rubik] bg-gradient-to-b from-black via-gray-950 to-gray-900 relative overflow-hidden">
@@ -241,7 +206,7 @@ const Hero = () => {
                     </h4>
 
                     <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                      Over <span className="text-amber-500 font-bold">35 years of excellence</span> in film publicity and public relations. Crafting the success stories of <span className="text-amber-500 font-bold">600+ films</span>, Diamond Babu is a trusted name in Kollywood.
+                      Over <span className="text-amber-500 font-bold">40 years of excellence</span> in film publicity and public relations. Crafting the success stories of <span className="text-amber-500 font-bold">600+ films</span>, Diamond Babu is a trusted name in Kollywood.
                     </p>
 
                     <p className="text-gray-300 text-base md:text-lg leading-relaxed">
@@ -261,14 +226,14 @@ const Hero = () => {
                       </span>
                     </div>
 
-                    <div className="pt-4">
+                    <a href="https://www.instagram.com/idiamondbabu/?hl=en" target="_blank" className="pt-4">
                       <button className="group p-1 bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-900 text-white font-semibold shadow-2xl h-14 rounded-[30px] flex items-center gap-x-0 text-base md:text-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-amber-500/20 border border-gray-700">
                         <span className="px-6">Contact Now</span>
                         <div className="p-3  rounded-full bg-gradient-to-r from-[#ff0664] to-[#ff3385] h-full flex items-center group-hover:from-[#ff3385] group-hover:to-[#ff0664] transition-all duration-300">
                           <BsInstagram className="text-white text-2xl md:text-2xl font-bold group-hover:rotate-12 transition-transform" />
                         </div>
                       </button>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -296,13 +261,7 @@ const Hero = () => {
             </div>
           </div>
         </section>
-
-        {/* Footer Section with Gradient */}
-        {/* <div className="bg-gradient-to-b from-black to-gray-950 py-12 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500 rounded-full filter blur-3xl animate-pulse"></div>
-          </div>
-        </div> */}
+       
       </div>
     </>
   );
